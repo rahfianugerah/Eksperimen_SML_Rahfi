@@ -10,8 +10,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 RAW_CSV       = "heart_failure_raw.csv"
-OUT_TRAIN     = "preprocessing/train_preprocessed.csv"
-OUT_TEST      = "preprocessing/test_preprocessed.csv"
+OUT_TRAIN     = "preprocessing/preprocess_dataset/train_preprocessed.csv"
+OUT_TEST      = "preprocessing/preprocess_dataset/test_preprocessed.csv"
 PKL_DIR       = "preprocessing/preprocess_data_pkl"
 
 TARGET_COL    = "HeartDisease"
