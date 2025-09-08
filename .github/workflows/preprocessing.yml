@@ -10,6 +10,8 @@ on:
 jobs:
   run-preprocessing:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout Repository
@@ -18,7 +20,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.12.7
+        python-version: '3.12.7'
 
     - name: Install Dependencies
       run: |
@@ -26,7 +28,6 @@ jobs:
 
     - name: Run Preprocessing Script
       run: |
-        # adjust filename if needed
         python preprocessing/automate_rahfi.py
 
     - name: Commit and Push Processed Dataset to Repository
@@ -45,5 +46,5 @@ jobs:
       with:
         name: preprocessed-datasets
         path: |
-          preprocessing/train_preprocessed.csv
-          preprocessing/test_preprocessed.csv
+          preprocessing/preprocess_dataset/train_preprocessed.csv
+          preprocessing/preprocess_dataset/test_preprocessed.csv
